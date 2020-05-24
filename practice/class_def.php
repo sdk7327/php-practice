@@ -1,8 +1,11 @@
 <?php
 
 class Dogs {
+    var $body_length = 24;
+    var $leg_length = 6;
+
  function greeting() {
-    echo "bark!";
+    return "bark! From a height of " . $this->leg_length . " inches";
  }
 
  function warning() {
@@ -15,6 +18,10 @@ $corgi = new Dogs();
 $mutt = new Dogs();
 
 
-$corgi->greeting();
+echo $corgi->leg_length . " inches";
+echo "<br>";
+echo $mutt->leg_length = 14 . " inches";
+echo "<br>";
+echo $corgi->greeting();
 
 ?>
