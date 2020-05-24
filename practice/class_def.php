@@ -1,15 +1,20 @@
 <?php
 
 class Dogs {
- function gretting() {
+ function greeting() {
     echo "bark!";
  }
+
+ function warning() {
+    echo "bark! bark!";
+ }
+
 }
 
-$the_methods = get_class_methods('Dogs');
+$corgi = new Dogs();
+$mutt = new Dogs();
 
-foreach ($the_methods as $method) {
-    echo $method . "<br>";
-}
+
+$corgi->greeting();
 
 ?>
