@@ -1,6 +1,7 @@
 <?php
 
 class Dogs {
+    static $love = 100;
     var $body_length = 24;
     var $leg_length = 6;
 
@@ -23,5 +24,18 @@ echo "<br>";
 echo $mutt->leg_length = 14 . " inches";
 echo "<br>";
 echo $corgi->greeting();
+echo "<br>";
+echo Dogs::$love . "%";
 
+
+class Cats extends Dogs {
+ function greeting() {
+    return "Purrrr from a height of " . $this->leg_length . " inches";
+ }
+}
+
+$persian = new Cats();
+
+echo "<br>";
+echo $persian->greeting();
 ?>
