@@ -1,6 +1,6 @@
 <?php
 
-function __autoload($class){
+function classAutoLoader($class){
     $class = strtolower($class);
     $path = "includes/{$class}.php";
 
@@ -10,5 +10,7 @@ function __autoload($class){
         die("My dude, the file named {$class}.php cannot be found.");
     }
 }
+
+spl_autoload_register('classAutoLoader');
 
 ?>
