@@ -20,30 +20,30 @@ class User {
     public static function find_this_query($sql) {
         global $database;
         $result_set = $database->query($sql);
-        return $result_set;
+        $object_array = array();
+
+        while($row = mysqli_fetch_array($result_set)) {
+            $object_array[] = self::instantiation($row);
+        }
+
+        return $object_array;
     }
 
-    public static function instantiation($found_user) {
+    public static function instantiation($the_record) {
         $object = new self;
 
-        //manually instantiating the variables
-        //$object->user_id = $found_user['user_id'];
-        //$object->username = $found_user['username'];
-        //$object->firstname = $found_user['firstname'];
-        //$object->lastname = $found_user['lastname'];
-        //$object->password = $found_user['password'];
 
         //automatically instantiating the variables
         foreach ($the_record as $attribute => $value) {
-            if($the_object->$has_attribute($attribute)) {
-                $the_object->$attribute = $value;
+            if($object->has_attribute($attribute)) {
+                $object->$attribute = $value;
             }
         }
 
         return $object;
     }
 
-    private function $has_attribute($attribute) {
+    private function has_attribute($attribute) {
         $object_properties = get_object_vars($this);
         return array_key_exists($attribute, $object_properties);
     }
