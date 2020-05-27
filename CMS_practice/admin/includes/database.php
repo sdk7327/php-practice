@@ -19,7 +19,7 @@ class Database {
 
     public function query($sql) {
         $result = $this->connection->query($sql);
-        $this->confrim
+        //$this->confirm_query($result);
         return $result;
     }
 
