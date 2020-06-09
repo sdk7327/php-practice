@@ -11,13 +11,13 @@
             <?php
                 //testing database connection
 
-                $users = User::find_all_users();
-                foreach($users as $user) {
-                    echo $user->lastname . "<br>";
-                }
+                $user = new User();
+                $user->username = "example_username";
+                $user->password = "example_password";
+                $user->firstname = "John";
+                $user->lastname = "Doe";
 
-                $found_user = User::find_user_by_id(2);
-                echo $found_user->username;
+                $user->create();
 
             ?>
 
