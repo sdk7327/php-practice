@@ -11,9 +11,8 @@
             <?php
                 //testing database connection
 
-                $user = User::find_user_by_id(3);
-                $user->password = "shhhpassword";
-                $user->update();
+                $user = User::find_user_by_id(6);
+                $user->delete();
 
             ?>
 
