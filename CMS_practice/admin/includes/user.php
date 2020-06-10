@@ -80,6 +80,21 @@ class User {
             return false;
         }
 
+    }// End of Create Method
+
+    public function update() {
+        global $database;
+
+        $sql = "UPDATE users SET ";
+        $sql .= "username= '" . $database->escape_string($this->username) . "', ";
+        $sql .= "password= '" . $database->escape_string($this->password) . "', ";
+        $sql .= "firstname= '" . $database->escape_string($this->firstname) . "', ";
+        $sql .= "lastname= '" . $database->escape_string($this->lastname) . "' ";
+        $sql .= " WHERE user_id= " . $database->escape_string($this->user_id);
+
+        $database->query($sql);
+
+        return (mysqli_affected_rows($database->connection) == 1) ? true : false;
     }
 
 } // End of Class User

@@ -11,13 +11,9 @@
             <?php
                 //testing database connection
 
-                $user = new User();
-                $user->username = "example_username";
-                $user->password = "example_password";
-                $user->firstname = "John";
-                $user->lastname = "Doe";
-
-                $user->create();
+                $user = User::find_user_by_id(3);
+                $user->password = "shhhpassword";
+                $user->update();
 
             ?>
 
