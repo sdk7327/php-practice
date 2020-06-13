@@ -11,9 +11,16 @@
             <?php
                 //testing database connection
 
-                $user = User::find_user_by_id(9);
-                $user->password = 'password';
-                $user->save();
+                $photo = new Photo();
+
+                $photo->id = 4;
+                $photo->title = "the babe";
+                $photo->description = "faye splooted and looking out the window";
+                $photo->filename = "faye_butt.png";
+                $photo->type = "image";
+                $photo->size = 382;
+
+                $photo->create();
 
             ?>
 
