@@ -1,12 +1,19 @@
 <?php
 class User extends Db_object {
     protected static $db_table = "users";
-    protected static $db_fields = array('username','password','firstname', 'lastname');
+    protected static $db_fields = array('filename','username','password','firstname', 'lastname');
     public $id;
+    public $filename;
     public $username;
     public $firstname;
     public $lastname;
     public $password;
+    public $upload_directory = "images";
+    public $image_placeholder = "http://placehold.it/80x80&text=image";
+
+    public function image_path_placeholder() {
+        return empty($this->filename) ? $this->image_placeholder : $this->upload_directory.DS.$this->filename;
+    }
 
     public static function verify_user($username, $password) {
         global $database;

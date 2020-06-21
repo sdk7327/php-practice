@@ -1,4 +1,10 @@
 
+/** format images in tables **/
+.admin-photo-thumbnail img {
+    width: 100px !important;
+    border-radius: 5px !important;
+}
+
 /** edit photo page sidebar styles **/
 .photo-info-box {
 
@@ -40,10 +46,4 @@ border-top: 1px solid #ddd;
 background-color: #ddd;
 padding: 10px;
 
-}
-
-/** format images in tables **/
-.admin-photo-thumbnail {
-    width: 200px;
-    border-radius: 5px;
 }
