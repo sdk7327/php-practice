@@ -8,7 +8,8 @@ require_once("new_config.php");
 require_once("database.php");
 require_once("db_object.php");
 require_once("user.php");
-require_once("photo.php");
+require_once(__DIR__ . DIRECTORY_SEPARATOR . "photo.php");
 require_once("session.php");
+require_once(__DIR__ . DIRECTORY_SEPARATOR . "comment.php");
 
 ?>

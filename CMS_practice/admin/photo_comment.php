@@ -2,7 +2,11 @@
 <?php if(!$session->is_signed_in()) {redirect("login.php");} ?>
 
 <?php
-$comments = Comment::find_all();
+if(empty($_GET['id'])) {
+    redirect("photos.php");
+}
+
+$comments = Comment::find_the_comments($_GET['id']);
 ?>
 
         <!-- Navigation -->
@@ -30,7 +34,6 @@ $comments = Comment::find_all();
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Post</th>
                                     <th>Author</th>
                                     <th>Comment</th>
                                 </tr>
@@ -39,7 +42,6 @@ $comments = Comment::find_all();
                                <?php foreach($comments as $comment) : ?>
                                 <tr>
                                     <td><?php echo $comment->id; ?></td>
-                                    <td><a href="photo_comment.php?id=<?php echo $comment->photo_id; ?>"><?php echo $comment->photo_id; ?></a></td>
                                     <td><?php echo $comment->author; ?></td>
                                     <td><?php echo $comment->body; ?></td>
                                     <td><a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a></td>
