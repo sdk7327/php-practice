@@ -122,11 +122,6 @@
 
             ?>
             <div class="row">
-                <php
-                    $photo_count = Photo::count_all();
-                    $user_count = User::count_all();
-                    $comment_count = Comment::count_all();
-                ?>
                 <div id="piechart" style="width: 900px; height: 500px;"></div>
             </div>
         </div>
