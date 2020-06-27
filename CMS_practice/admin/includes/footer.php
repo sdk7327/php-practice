@@ -7,6 +7,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+    <!-- Dropzone JS -->
+    <script src="js/dropzone.js"></script>
+
     <!-- TinyMCE WYSIWYG Editor -->
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="js/scripts.js"></script>

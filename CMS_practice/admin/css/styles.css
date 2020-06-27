@@ -1,3 +1,26 @@
+/**format photo modal**/
+.modal-dialog {
+width: 90% !important;
+}
+
+.modal-body {
+overflow: auto;
+height: 500px !important;
+min-height: 300px !important;
+}
+
+.modal_thumbnails {
+    width: 150px;
+    height: 100px !important;
+}
+
+#set_user_image {
+margin:10px;
+}
+
+#modal_sidebar {
+position: fixed !important;
+}
 
 /** format images in tables **/
 .admin-photo-thumbnail img {
@@ -46,4 +69,10 @@ border-top: 1px solid #ddd;
 background-color: #ddd;
 padding: 10px;
 
+}
+
+/******** Login page **********/
+
+#login-id label {
+    color: #fff;
 }

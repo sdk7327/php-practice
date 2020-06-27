@@ -7,6 +7,7 @@ class Session {
     public $message;
     public $count;
 
+
     function __construct() {
         session_start();
         $this->check_the_login();
@@ -68,5 +69,6 @@ class Session {
 }
 
 $session = new Session();
+$message = $session->message();
 
 ?>
